@@ -19,7 +19,7 @@ public class DockerController {
     @RequestMapping("server")
     public String server() {
         log.info("DockerController  server 执行了");
-        return "Hello Docker3";
+        return "Hello Docker4";
     }
 
 }

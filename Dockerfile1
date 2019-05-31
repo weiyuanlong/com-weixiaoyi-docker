@@ -7,6 +7,6 @@ WORKDIR /com-weixiaoyi-docker
 
 EXPOSE 9001
 
-ADD com-weixiaoyi-docker-0.0.1.jar app.jar
+ADD ./target/com-weixiaoyi-docker-0.0.1.jar ./
 
-ENTRYPOINT ["java","Djava.security.egd=file:/dev/.urandom","-jar","/app.jar"]
+CMD java -Djava.security.egd=file:/dev/./urandom -Xms512m -Xmx512m -jar com-weixiaoyi-docker-0.0.1.jar
