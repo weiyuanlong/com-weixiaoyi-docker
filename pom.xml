@@ -64,7 +64,7 @@
                     <imageName>
                         registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest
                     </imageName>
-                    <newName>registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest</newName>
+                    <!--<newName>registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest</newName>-->
                     <imageTags>
                         <!--docker的tag为项目版本号、latest-->
                         <imageTag>latest</imageTag>
