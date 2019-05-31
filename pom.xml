@@ -42,6 +42,37 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>com.spotify</groupId>
+                <artifactId>docker-maven-plugin</artifactId>
+                <version>0.4.13</version>
+                <configuration>
+                    <!-- 私有仓库配置，需要settings.xml文件配合serverId对应的服务地址 -->
+                    <serverId>docker-aliyun</serverId>
+                    <registryUrl>https://registry.cn-beijing.aliyuncs.com/v2/</registryUrl>
+                    <!-- <forceTags>true</forceTags> -->
+                    <!--install阶段也上传，否则只有deploy阶段上传-->
+                    <pushImage>true</pushImage>
+                    <dockerHost>http://39.106.221.56:2375</dockerHost>
+                    <dockerDirectory>${project.basedir}</dockerDirectory>
+                    <imageName>
+                        registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest
+                    </imageName>
+                    <imageTags>
+                        <!--docker的tag为项目版本号、latest-->
+                        <imageTag>latest</imageTag>
+                    </imageTags>
+                    <resources>
+                        <rescource><!-- 将打包文件放入dockerDirectory指定的位置 -->
+                            <!--<targetPath>/</targetPath>-->
+                            <directory>${project.build.directory}</directory>
+                            <include>${project.build.finalName}.jar</include>
+                        </rescource>
+                    </resources>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 
