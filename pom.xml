@@ -49,16 +49,22 @@
                 <version>0.4.13</version>
                 <configuration>
                     <!-- 私有仓库配置，需要settings.xml文件配合serverId对应的服务地址 -->
-                    <serverId>docker-aliyun</serverId>
+                    <serverId>my-docker-registry</serverId>
                     <registryUrl>https://registry.cn-beijing.aliyuncs.com/v2/</registryUrl>
-                    <!-- <forceTags>true</forceTags> -->
-                    <!--install阶段也上传，否则只有deploy阶段上传-->
+                    <!-- build 时强制覆盖 tag，配合 imageTags 使用 默认：false -->
+                    <forceTags>false</forceTags>
+                    <!-- install阶段也上传，否则只有deploy阶段上传 -->
                     <pushImage>true</pushImage>
                     <dockerHost>http://39.106.221.56:2375</dockerHost>
                     <dockerDirectory>${project.basedir}</dockerDirectory>
+                    <!-- push 镜像失败，重试次数 默认：5 -->
+                    <retryPushCount>3</retryPushCount>
+                    <!-- 指定 –rm=true 即 build 完成后删除中间容器 默认：false -->
+                    <rm>false</rm>
                     <imageName>
                         registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest
                     </imageName>
+                    <newName>registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest</newName>
                     <imageTags>
                         <!--docker的tag为项目版本号、latest-->
                         <imageTag>latest</imageTag>
