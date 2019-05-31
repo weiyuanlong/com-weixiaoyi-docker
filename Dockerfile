@@ -5,7 +5,7 @@ mkdir -p /xiaoyi-docker
 
 WORKDIR /xiaoyi-docker
 
-EXPOSE 9201
+EXPOSE 9001
 
 ADD ./target/com-weixiaoyi-docker-0.0.1-SNAPSHOT.jar ./
 
