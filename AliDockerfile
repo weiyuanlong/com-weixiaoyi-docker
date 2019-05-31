@@ -1,0 +1,12 @@
+FROM anapsix/alpine-java:8_server-jre_unlimited
+
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+mkdir -p /com-weixiaoyi-docker
+
+WORKDIR /com-weixiaoyi-docker
+
+EXPOSE 9001
+
+ADD com-weixiaoyi-docker-0.0.1.jar app.jar
+
+ENTRYPOINT ["java","Djava.security.egd=file:/dev/.urandom","-jar","/app.jar"]
