@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.weixiaoyi</groupId>
     <artifactId>com-weixiaoyi-docker</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>com-weixiaoyi-docker</name>
     <description>Demo project for Spring Boot</description>
 
@@ -62,12 +62,12 @@
                     <!-- 指定 –rm=true 即 build 完成后删除中间容器 默认：false -->
                     <rm>false</rm>
                     <imageName>
-                        registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest
+                        registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:${project.version}
                     </imageName>
                     <!--<newName>registry.cn-beijing.aliyuncs.com/persion_two/xiaoyi-docker:latest</newName>-->
                     <imageTags>
                         <!--docker的tag为项目版本号、latest-->
-                        <imageTag>latest</imageTag>
+                        <imageTag>${project.version}</imageTag>
                     </imageTags>
                     <resources>
                         <rescource><!-- 将打包文件放入dockerDirectory指定的位置 -->
