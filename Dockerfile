@@ -1,9 +1,9 @@
 FROM anapsix/alpine-java:8_server-jre_unlimited
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
-mkdir -p /xiaoyi-docker
+mkdir -p /com-weixiaoyi-docker
 
-WORKDIR /xiaoyi-docker
+WORKDIR /com-weixiaoyi-docker
 
 EXPOSE 9001
 
